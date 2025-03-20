@@ -11,6 +11,17 @@ let currentUser = {
 let scraps = [];
 let testimonials = [];
 let communities = [];
+let currentBackgroundIndex = 0;
+
+// Função para carregar o fundo dinâmico
+function loadBackground() {
+    const background = document.body;
+    currentBackgroundIndex = (currentBackgroundIndex % 12) + 1;
+    const imageUrl = `images/a${currentBackgroundIndex.toString().padStart(3, '0')}.jpg`;
+    background.style.backgroundImage = `url('${imageUrl}')`;
+    background.style.backgroundSize = 'cover';
+    background.style.backgroundPosition = 'center';
+}
 
 // Funções para carregar dados
 function loadScraps() {
@@ -33,6 +44,15 @@ function loadTestimonials() {
     `).join('');
 }
 
+function loadCommunities() {
+    const communitiesList = document.getElementById('communities-list');
+    communitiesList.innerHTML = communities.map(community => `
+        <div class="community">
+            <h3>${community.name}</h3>
+        </div>
+    `).join('');
+}
+
 // Funções para interações
 function postScrap() {
     const content = document.getElementById('scrap-content').value;
@@ -44,6 +64,7 @@ function postScrap() {
         };
         scraps.push(scrap);
         loadScraps();
+        document.getElementById('scrap-content').value = ''; // Limpa o campo
     }
 }
 
@@ -57,15 +78,33 @@ function postTestimonial() {
         };
         testimonials.push(testimonial);
         loadTestimonials();
+        document.getElementById('testimonial-content').value = ''; // Limpa o campo
+    }
+}
+
+function createCommunity() {
+    const name = document.getElementById('community-name').value;
+    if (name) {
+        const community = {
+            id: communities.length + 1,
+            name: name
+        };
+        communities.push(community);
+        loadCommunities();
+        document.getElementById('community-name').value = ''; // Limpa o campo
     }
 }
 
 // Event Listeners
 document.getElementById('post-scrap-button').addEventListener('click', postScrap);
 document.getElementById('post-testimonial-button').addEventListener('click', postTestimonial);
+document.getElementById('create-community-button').addEventListener('click', createCommunity);
 
 // Inicialização
 window.addEventListener('load', () => {
+    loadBackground();
     loadScraps();
     loadTestimonials();
+    loadCommunities();
+    setInterval(loadBackground, 5000); // Muda o fundo a cada 5 segundos
 });
