@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Bonito</title>
+    <title>Galeria de Imagens</title>
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
@@ -14,52 +14,62 @@
     <!-- Menu de Navegação Fixo -->
     <nav class="navbar">
         <ul>
-            <li><a href="#home" class="nav-link">Home</a></li>
-            <li><a href="#news" class="nav-link">Notícias</a></li>
-            <li><a href="#contact" class="nav-link">Contato</a></li>
+            <li><a href="#home" class="nav-link">Início</a></li>
+            <li><a href="#login" class="nav-link">Login</a></li>
+            <li><a href="#signup" class="nav-link">Criar Conta</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <!-- Página Home -->
-        <section id="home" class="page active">
+        <!-- Área de Exibição de Imagens -->
+        <section id="gallery" class="page active">
             <div class="content">
-                <h1>Bem-vindo ao Site Bonito!</h1>
-                <p>Este é um site incrível com efeitos especiais. Role para baixo para explorar.</p>
-                <p>Conteúdo fictício: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h1>Galeria de Imagens</h1>
+                <div id="image-grid" class="image-grid">
+                    <!-- As imagens serão carregadas dinamicamente aqui -->
+                </div>
+                <!-- Formulário de Upload (visível apenas para administradores) -->
+                <div id="upload-section" class="upload-section" style="display: none;">
+                    <h2>Upload de Imagens</h2>
+                    <form id="upload-form">
+                        <input type="file" id="image-upload" name="image" accept="image/*" required>
+                        <button type="submit">Enviar Imagem</button>
+                    </form>
+                </div>
             </div>
         </section>
 
-        <!-- Página Notícias -->
-        <section id="news" class="page">
+        <!-- Área de Login -->
+        <section id="login" class="page">
             <div class="content">
-                <h1>Últimas Notícias</h1>
-                <article>
-                    <h2>Notícia 1: Lançamento do Novo Produto</h2>
-                    <p>Descrição da notícia 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                </article>
-                <article>
-                    <h2>Notícia 2: Evento de Tecnologia</h2>
-                    <p>Descrição da notícia 2. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                </article>
+                <h1>Login</h1>
+                <form id="login-form">
+                    <label for="login-email">E-mail:</label>
+                    <input type="email" id="login-email" name="email" required>
+                    
+                    <label for="login-password">Senha:</label>
+                    <input type="password" id="login-password" name="password" required>
+                    
+                    <button type="submit">Entrar</button>
+                </form>
             </div>
         </section>
 
-        <!-- Página Contatos -->
-        <section id="contact" class="page">
+        <!-- Área de Criação de Conta -->
+        <section id="signup" class="page">
             <div class="content">
-                <h1>Entre em Contato</h1>
-                <form>
-                    <label for="name">Nome:</label>
-                    <input type="text" id="name" name="name" required>
+                <h1>Criar Conta</h1>
+                <form id="signup-form">
+                    <label for="signup-name">Nome:</label>
+                    <input type="text" id="signup-name" name="name" required>
                     
-                    <label for="email">E-mail:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="signup-email">E-mail:</label>
+                    <input type="email" id="signup-email" name="email" required>
                     
-                    <label for="message">Mensagem:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="signup-password">Senha:</label>
+                    <input type="password" id="signup-password" name="password" required>
                     
-                    <button type="submit">Enviar</button>
+                    <button type="submit">Criar Conta</button>
                 </form>
             </div>
         </section>
