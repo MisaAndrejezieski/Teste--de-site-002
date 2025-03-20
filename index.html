@@ -3,74 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Galeria de Imagens</title>
+    <title>Orkut Clone</title>
     <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Plano de fundo central fixo -->
-    <div class="background"></div>
-
-    <!-- Menu de Navegação Fixo -->
+    <!-- Barra de Navegação -->
     <nav class="navbar">
         <ul>
             <li><a href="#home" class="nav-link">Início</a></li>
-            <li><a href="#login" class="nav-link">Login</a></li>
-            <li><a href="#signup" class="nav-link">Criar Conta</a></li>
+            <li><a href="#profile" class="nav-link">Perfil</a></li>
+            <li><a href="#friends" class="nav-link">Amigos</a></li>
+            <li><a href="#communities" class="nav-link">Comunidades</a></li>
+            <li><a href="#messages" class="nav-link">Mensagens</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <!-- Área de Exibição de Imagens -->
-        <section id="gallery" class="page active">
+        <!-- Página Inicial (Feed de Notícias) -->
+        <section id="home" class="page active">
             <div class="content">
-                <h1>Galeria de Imagens</h1>
-                <div id="image-grid" class="image-grid">
-                    <!-- As imagens serão carregadas dinamicamente aqui -->
+                <h1>Feed de Notícias</h1>
+                <div id="feed" class="feed">
+                    <!-- Postagens serão carregadas aqui -->
                 </div>
-                <!-- Formulário de Upload (visível apenas para administradores) -->
-                <div id="upload-section" class="upload-section" style="display: none;">
-                    <h2>Upload de Imagens</h2>
-                    <form id="upload-form">
-                        <input type="file" id="image-upload" name="image" accept="image/*" required>
-                        <button type="submit">Enviar Imagem</button>
-                    </form>
+                <div class="create-post">
+                    <textarea id="post-content" placeholder="O que você está pensando?"></textarea>
+                    <button id="post-button">Postar</button>
                 </div>
             </div>
         </section>
 
-        <!-- Área de Login -->
-        <section id="login" class="page">
+        <!-- Página de Perfil -->
+        <section id="profile" class="page">
             <div class="content">
-                <h1>Login</h1>
-                <form id="login-form">
-                    <label for="login-email">E-mail:</label>
-                    <input type="email" id="login-email" name="email" required>
-                    
-                    <label for="login-password">Senha:</label>
-                    <input type="password" id="login-password" name="password" required>
-                    
-                    <button type="submit">Entrar</button>
-                </form>
+                <h1>Meu Perfil</h1>
+                <div class="profile-info">
+                    <img src="images/default-avatar.jpg" alt="Avatar" class="avatar">
+                    <h2 id="profile-name">Nome do Usuário</h2>
+                    <p id="profile-bio">Biografia do usuário.</p>
+                </div>
+                <div class="profile-posts">
+                    <h3>Minhas Postagens</h3>
+                    <div id="user-posts" class="posts">
+                        <!-- Postagens do usuário serão carregadas aqui -->
+                    </div>
+                </div>
             </div>
         </section>
 
-        <!-- Área de Criação de Conta -->
-        <section id="signup" class="page">
+        <!-- Página de Amigos -->
+        <section id="friends" class="page">
             <div class="content">
-                <h1>Criar Conta</h1>
-                <form id="signup-form">
-                    <label for="signup-name">Nome:</label>
-                    <input type="text" id="signup-name" name="name" required>
-                    
-                    <label for="signup-email">E-mail:</label>
-                    <input type="email" id="signup-email" name="email" required>
-                    
-                    <label for="signup-password">Senha:</label>
-                    <input type="password" id="signup-password" name="password" required>
-                    
-                    <button type="submit">Criar Conta</button>
-                </form>
+                <h1>Amigos</h1>
+                <div id="friends-list" class="friends-list">
+                    <!-- Lista de amigos será carregada aqui -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Comunidades -->
+        <section id="communities" class="page">
+            <div class="content">
+                <h1>Comunidades</h1>
+                <div id="communities-list" class="communities-list">
+                    <!-- Lista de comunidades será carregada aqui -->
+                </div>
+                <div class="create-community">
+                    <input type="text" id="community-name" placeholder="Nome da Comunidade">
+                    <button id="create-community-button">Criar Comunidade</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Página de Mensagens -->
+        <section id="messages" class="page">
+            <div class="content">
+                <h1>Mensagens</h1>
+                <div id="messages-list" class="messages-list">
+                    <!-- Mensagens serão carregadas aqui -->
+                </div>
+                <div class="send-message">
+                    <textarea id="message-content" placeholder="Digite sua mensagem"></textarea>
+                    <button id="send-message-button">Enviar</button>
+                </div>
             </div>
         </section>
     </div>
