@@ -1,62 +1,118 @@
 /* Estilos Gerais */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #f0f2f5;
+    background: #f0f0f0;
     color: #333;
 }
 
-.navbar {
+.top-bar {
     background: #3b5998;
     padding: 10px;
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.navbar ul {
+.logo img {
+    height: 40px;
+}
+
+.main-nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    justify-content: center;
 }
 
-.navbar li {
+.main-nav li {
     margin: 0 15px;
 }
 
-.navbar a {
+.main-nav a {
     color: white;
     text-decoration: none;
     font-weight: 600;
 }
 
+.user-info {
+    display: flex;
+    align-items: center;
+}
+
+.user-info span {
+    margin-right: 10px;
+}
+
+#logout-button {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
 .container {
+    display: flex;
     padding: 20px;
 }
 
-.page {
-    display: none;
-}
-
-.page.active {
-    display: block;
-}
-
-.content {
+.sidebar {
+    width: 250px;
     background: white;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.feed, .posts, .friends-list, .communities-list, .messages-list {
+.profile-summary {
+    text-align: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.side-menu {
+    list-style: none;
+    padding: 0;
     margin-top: 20px;
 }
 
-.create-post, .send-message, .create-community {
-    margin-top: 20px;
+.side-menu li {
+    margin: 10px 0;
+}
+
+.side-menu a {
+    color: #333;
+    text-decoration: none;
+}
+
+.main-content {
+    flex: 1;
+    margin: 0 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.updates-sidebar {
+    width: 250px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.create-scrap, .create-community {
+    margin-bottom: 20px;
 }
 
 textarea {
@@ -81,13 +137,13 @@ button:hover {
     background: #2d4373;
 }
 
-.profile-info {
-    text-align: center;
+.scraps-feed, .testimonials, .communities-list, .updates-list {
+    margin-top: 20px;
 }
 
-.avatar {
-    width: 100px;
-    height: 100px;
+.avatar-large {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
